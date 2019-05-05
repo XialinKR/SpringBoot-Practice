@@ -1,6 +1,7 @@
 package com.it.controller;
 
 import com.it.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,9 @@ public class IndexContriller {
 
     @Value("${com.it.password}")
     private String password;
+
+    @Autowired
+    private User user;
 
     @GetMapping("/Index")
     public List<User> getUser(){
@@ -33,4 +37,10 @@ public class IndexContriller {
     public String getUsername(){
         return username;
     }
+
+    @GetMapping("/user")
+    public User getUser1(){
+        return user;
+    }
+
 }

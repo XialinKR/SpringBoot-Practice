@@ -13,6 +13,9 @@ public class App
     public static void main( String[] args )
     {
 
-        SpringApplication.run(App.class,args);
+//        SpringApplication.run(App.class,args);
+        SpringApplication application = new SpringApplication(App.class);
+        application.setAddCommandLineProperties(true);
+        application.run(args);
     }
 }
